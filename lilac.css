@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #111;
+    background-image: linear-gradient(to bottom right,#111, #463d3d) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   /*The min-height: 100vh makes the elements in the body center in the middle vertically.
+    I don't also know why it is like this, but i'll try to get more insight on this*/
+}
+main{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    font-weight: 500;
+    font-family: consolas;
+    /* A cool font-family by the way */
+    color: #fff;
+    height: 300px;
+}
+span{
+   position: absolute;
+   /*The position: absolute makes the span expanded to its parent container that has a position
+     specified (other than static) */
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   border-radius: 38% 62% 64% 36% / 43% 35% 65% 57%;
+   border: 2px solid #fff;
+   animation: animate 2s linear infinite;
+}
+span:nth-child(1) {
+    animation-direction: reverse;
+    border-radius: 41% 59% 40% 60% / 65% 66% 34% 35%;
+}
+span:nth-child(2) {
+    animation-duration: 2s;
+    border-radius: 73% 27% 56% 44% / 57% 74% 26% 43%;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+
+/*All important comments on what may be strange
+
+Check on the min-height property;
+You've seen that an element that has been positioned on absolute takes the flow of its parent 
+element that has a position set, if the position set on the parent container is set on static(default)
+it will take the flow of the whole website;
+
+
+
+
+*/
